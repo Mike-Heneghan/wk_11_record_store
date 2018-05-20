@@ -26,4 +26,8 @@ RecordStore.prototype.removeRecord = function (recordToRemove) {
   this.stock = recordsToKeep;
 };
 
+RecordStore.prototype.hasRecordBoolean = function (record) {
+  return this.stock.includes(record);
+};
+
 module.exports = RecordStore;

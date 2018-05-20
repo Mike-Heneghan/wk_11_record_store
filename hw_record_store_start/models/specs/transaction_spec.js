@@ -48,7 +48,6 @@ describe('Transaction', function(){
     const fundsIncreasedByRecordPrice = recordCollector.funds;
     assert.deepStrictEqual(recordNoLongerInCollection, [record1]);
     assert.strictEqual(fundsIncreasedByRecordPrice, 1500);
-
   })
 
   it('should be able to hand the exchange of a record when the seller has the record and the buyer has enough funds.', function(){
@@ -65,7 +64,7 @@ describe('Transaction', function(){
     assert.strictEqual(storePaid, 1000);
     assert.deepStrictEqual(collectorHasRecord, [record1]);
     assert.deepStrictEqual(storeNoLongerHasRecord, [record2]);
-  })
+  });
 
 });
 

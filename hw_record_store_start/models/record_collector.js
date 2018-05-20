@@ -35,6 +35,10 @@ RecordCollector.prototype.removeRecord = function (recordToRemove) {
  this.collection = recordsToKeep;
 };
 
+RecordCollector.prototype.hasRecordBoolean = function(record){
+  return this.collection.includes(record);
+}
+
 
 module.exports = RecordCollector;
 

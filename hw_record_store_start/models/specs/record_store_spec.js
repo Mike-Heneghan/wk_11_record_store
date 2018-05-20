@@ -65,6 +65,19 @@ describe('Record Store', function(){
     assert.deepStrictEqual(actual, [record2]);
   });
 
+  it('should be able to return true if record is in collection', function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    const actual = recordStore.hasRecordBoolean(record1);
+    assert.strictEqual(actual, true);
+  });
+
+  it('should be able to return false if record is not in collection', function(){
+    recordStore.addRecord(record2);
+    const actual = recordStore.hasRecordBoolean(record1);
+    assert.strictEqual(actual, false);
+  })
+
   xit('should be able to sell a record if it has it in it\'s colleciton')
 
   xit('should be able to sell a record if it has the record')

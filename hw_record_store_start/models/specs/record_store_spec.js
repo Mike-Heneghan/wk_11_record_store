@@ -6,6 +6,7 @@ describe('Record Store', function(){
   let record1;
   let record2;
   let record3;
+  let record4;
   let recordStore;
 
 
@@ -28,6 +29,12 @@ describe('Record Store', function(){
       genre: 'indie rock',
       price: 1750
     });
+    record4 = new Record({
+      title: 'The Suburbs',
+      artist: 'Arcade Fire',
+      genre: 'indie rock',
+      price: 1000
+    })
     recordStore = new RecordStore('Tower Records');
   });
 
@@ -90,14 +97,40 @@ describe('Record Store', function(){
     recordStore.addRecord(record1);
     recordStore.addRecord(record2);
     recordStore.addRecord(record3);
-    const actual = recordStore.findByProperty({genre: 'indie rock'});
-    assert.deepStrictEqual(actual, [record2, record3]);
+    recordStore.addRecord(record4);
+    const actual1 = recordStore.findByProperty({genre: 'indie rock'});
+    const actual2 = recordStore.findByProperty({genre: 'indie rock', artist: 'Arcade Fire'});
+    const actual3 = recordStore.findByProperty({genre: 'indie rock', artist: 'Arcade Fire', price: 1000});
+    assert.deepStrictEqual(actual1, [record2, record3, record4]);
+    assert.deepStrictEqual(actual2, [record2, record4]);
+    assert.deepStrictEqual(actual3, [record4]);
   });
 
-  it('should be able to find all records which match a given title');
+  it('should be able to find all records which match a given title', function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    recordStore.addRecord(record3);
+    recordStore.addRecord(record4);
+    const actual = recordStore.findByProperty({title: 'Neon Bible'});
+    assert.deepStrictEqual(actual, [record2]);
+  });
 
-  it('should be able to find all records which match a given artist');
+  it('should be able to find all records which match a given artist', function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    recordStore.addRecord(record3);
+    recordStore.addRecord(record4);
+    const actual = recordStore.findByProperty({artist: 'Arcade Fire'});
+    assert.deepStrictEqual(actual, [record2, record4]);
+  });
 
-  it('should be able to find all records which match on multiple attributes');
+  it('should be able to find all records which match on multiple attributes', function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    recordStore.addRecord(record3);
+    recordStore.addRecord(record4);
+    const actual = recordStore.findByProperty({genre: 'indie rock', artist: 'Arcade Fire', price: 1500});
+    assert.deepStrictEqual(actual, [record2]);
+  });
 
 });

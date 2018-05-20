@@ -34,6 +34,8 @@ RecordCollector.prototype.removeRecord = function (recordToRemove) {
  record!== recordToRemove);
  this.collection = recordsToKeep;
 };
+
+
 module.exports = RecordCollector;
 
 

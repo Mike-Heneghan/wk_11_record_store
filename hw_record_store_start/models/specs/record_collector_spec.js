@@ -73,5 +73,5 @@ it('should be able to remove a record from it\'s collection', function(){
 
 xit('should be able to buy a record if there is sufficient funds');
 
-xit('should be able to sell a record if ti has the record');
+xit('should be able to sell a record if it has the record');
 });

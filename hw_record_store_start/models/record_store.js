@@ -4,4 +4,8 @@ const RecordStore = function(name){
   this.stock = [];
 }
 
+RecordStore.prototype.addFunds = function (funds) {
+  this.funds += funds;
+};
+
 module.exports = RecordStore;

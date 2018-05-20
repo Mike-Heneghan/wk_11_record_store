@@ -28,12 +28,12 @@ describe('Record Store', function(){
     assert.strictEqual(actual, 'Tower Records');
   });
 
-  xit('should start with no funds', function(){
+  it('should start with no funds', function(){
     const actual = recordStore.funds;
     assert.strictEqual(actual, 0);
   });
 
-  xit('should be able to add funds', function(){
+  it('should be able to add funds', function(){
     recordStore.addFunds(10000);
     const actual = recordStore.funds;
     assert.strictEqual(actual, 10000);

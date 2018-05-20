@@ -50,7 +50,7 @@ describe('Record Store', function(){
     assert.deepStrictEqual(actual, [record1]);
   });
 
-  xit('should be able to remove a collection from it\'s stock', function(){
+  it('should be able to remove a collection from it\'s stock', function(){
     recordStore.addRecord(record1);
     recordStore.addRecord(record2);
     recordStore.removeRecord(record1);

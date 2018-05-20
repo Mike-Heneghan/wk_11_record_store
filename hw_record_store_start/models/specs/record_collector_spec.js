@@ -29,27 +29,27 @@ it('should start with no funds', function(){
   assert.strictEqual(actual, 0)
 });
 
-xit('should be able to add funds', function(){
+it('should be able to add funds', function(){
   recordCollector.addFunds(5000);
   const actual = recordCollector.getFunds();
   assert.strictEqual(actual, 5000);
 });
 
-xit('should be able to remove funds', function(){
+it('should be able to remove funds', function(){
   recordCollector.addFunds(5000);
   recordCollector.removeFunds(500);
   const actual = recordCollector.getFunds();
   assert.strictEqual(actual, 4500);
 });
 
-xit('should start with an empty collection of records', function(){
+it('should start with an empty collection of records', function(){
   const actual = recordCollector.getCollectionSize();
   assert.strictEqual(actual, 0);
 })
 
-xit('should be able to add a record to it\'s collection', function(){
+it('should be able to add a record to it\'s collection', function(){
   recordCollector.addRecord(record1);
-  const actual = recordCollector.getRecords();
+  const actual = recordCollector.collection;
   const testCase = [record1];
   assert.deepStrictEqual(actual, testCase);
 });

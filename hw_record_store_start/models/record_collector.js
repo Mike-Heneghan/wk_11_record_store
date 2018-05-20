@@ -7,7 +7,22 @@ RecordCollector.prototype.getFunds = function () {
   return this.funds;
 };
 
+RecordCollector.prototype.addFunds = function (funds) {
+  this.funds += funds;
+};
 
+RecordCollector.prototype.removeFunds = function (funds) {
+  this.funds -= funds;
+};
+
+RecordCollector.prototype.getCollectionSize = function () {
+  return this.collection.length;
+};
+
+RecordCollector.prototype.addRecord = function (record) {
+  this.collection.push(record);
+
+};
 
 module.exports = RecordCollector;
 

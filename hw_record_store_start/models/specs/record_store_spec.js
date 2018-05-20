@@ -39,22 +39,22 @@ describe('Record Store', function(){
     assert.strictEqual(actual, 10000);
   });
 
-  xit('should start with an empty collection of records', function(){
-    const actual = recordStore.getCollectionSize();
+   it('should start with an empty collection of records', function(){
+    const actual = recordStore.getStockCount();
     assert.strictEqual(actual, 0);
   });
 
-  xit('shoul be able to add a record to it\'s stock', function(){
+  it('shoul be able to add a record to it\'s stock', function(){
     recordStore.addRecord(record1);
-    const actual = recordStore.collection;
-    assert.strictEqual(actual, [record1]);
+    const actual = recordStore.stock;
+    assert.deepStrictEqual(actual, [record1]);
   });
 
   xit('should be able to remove a collection from it\'s stock', function(){
     recordStore.addRecord(record1);
     recordStore.addRecord(record2);
     recordStore.removeRecord(record1);
-    const actual = recordStore.collection;
+    const actual = recordStore.stock;
     assert.deepStrictEqual(actual, [record2]);
   });
 

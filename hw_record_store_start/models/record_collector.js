@@ -21,8 +21,14 @@ RecordCollector.prototype.getCollectionSize = function () {
 
 RecordCollector.prototype.addRecord = function (record) {
   this.collection.push(record);
-
 };
+
+RecordCollector.prototype.findRecordByTitle = function (title) {
+  const foundRecord = this.collection.filter(record =>
+  record.title === title);
+  return foundRecord;
+};
+
 
 module.exports = RecordCollector;
 

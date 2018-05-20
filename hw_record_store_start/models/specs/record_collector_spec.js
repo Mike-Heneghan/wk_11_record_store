@@ -54,7 +54,7 @@ it('should be able to add a record to it\'s collection', function(){
   assert.deepStrictEqual(actual, testCase);
 });
 
-xit('should be able to find a record by title', function(){
+it('should be able to find a record by title', function(){
   recordCollector.addRecord(record1);
   recordCollector.addRecord(record2);
   const actual1 = recordCollector.findRecordByTitle('Neon Bible');
@@ -67,7 +67,7 @@ xit('should be able to remove a record from it\'s collection', function(){
   recordCollector.addRecord(record1);
   recordCollector.addRecord(record2);
   recordCollector.removeRecord(record1);
-  const actual = recordCollector.getRecords();
+  const actual = recordCollector.collection;
   assert.deepStrictEqual(actual, [record2]);
 });
 

@@ -46,7 +46,7 @@ describe('Record Store', function(){
     assert.strictEqual(actual, 5000);
   })
 
-   it('should start with an empty collection of records', function(){
+  it('should start with an empty collection of records', function(){
     const actual = recordStore.getStockCount();
     assert.strictEqual(actual, 0);
   });
@@ -78,7 +78,4 @@ describe('Record Store', function(){
     assert.strictEqual(actual, false);
   })
 
-  xit('should be able to sell a record if it has it in it\'s colleciton')
-
-  xit('should be able to sell a record if it has the record')
 });

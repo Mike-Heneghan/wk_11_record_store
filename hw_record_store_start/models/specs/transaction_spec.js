@@ -66,6 +66,22 @@ describe('Transaction', function(){
     assert.deepStrictEqual(storeNoLongerHasRecord, [record2]);
   });
 
+  it('should not sell if buyer does not have funds', function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    recordCollector.addFunds(500);
+    transaction = new Transaction(recordCollector, recordStore);
+    transaction.sell(record1);
+    const collectorNotCharged = recordCollector.funds;
+    const storeNotPaid = recordStore.funds;
+    const collectorHasNotGotRecord = recordCollector.collection;
+    const storeHasRecord = recordStore.stock;
+    assert.strictEqual(collectorNotCharged, 500);
+    assert.strictEqual(storeNotPaid, 0);
+    assert.deepStrictEqual(collectorHasNotGotRecord, []);
+    assert.deepStrictEqual(storeHasRecord, [record1,record2]);
+  });
+
 });
 
 

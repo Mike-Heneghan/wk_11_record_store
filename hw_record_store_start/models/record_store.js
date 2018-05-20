@@ -22,12 +22,12 @@ RecordStore.prototype.addRecord = function (record) {
 
 RecordStore.prototype.removeRecord = function (recordToRemove) {
   const recordsToKeep = this.stock.filter(record =>
-  record !== recordToRemove);
-  this.stock = recordsToKeep;
-};
+    record !== recordToRemove);
+    this.stock = recordsToKeep;
+  };
 
-RecordStore.prototype.hasRecordBoolean = function (record) {
-  return this.stock.includes(record);
-};
+  RecordStore.prototype.hasRecordBoolean = function (record) {
+    return this.stock.includes(record);
+  };
 
-module.exports = RecordStore;
+  module.exports = RecordStore;

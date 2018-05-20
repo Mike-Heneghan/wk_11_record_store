@@ -7,6 +7,8 @@ describe('RecordCollector', function(){
   let recordCollector;
   let record1;
   let record2;
+  let record3;
+
 
   beforeEach(function(){
     record1 = new Record({
@@ -20,6 +22,12 @@ describe('RecordCollector', function(){
       artist: 'Arcade Fire',
       genre: 'indie rock',
       price: 1500
+    });
+    record3 = new Record({
+      title: 'I See You',
+      artist: 'The xx',
+      genre: 'indie rock',
+      price: 1750
     });
     recordCollector = new RecordCollector();
   });
@@ -82,6 +90,16 @@ describe('RecordCollector', function(){
     recordCollector.addRecord(record2);
     const actual = recordCollector.hasRecordBoolean(record1);
     assert.strictEqual(actual, false);
+  });
+
+  it('should be able to sort collection by artist', function(){
+    recordCollector.addRecord(record1);
+    recordCollector.addRecord(record2);
+    recordCollector.addRecord(record3);
+    recordCollector.sortByArtist();
+    const actual = recordCollector.collection;
+    const testCase = [record2, record1, record3];
+    assert.deepStrictEqual(actual, testCase);
   });
 
 });

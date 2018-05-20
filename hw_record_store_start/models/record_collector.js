@@ -29,15 +29,28 @@ RecordCollector.prototype.findRecordByTitle = function (title) {
     return foundRecord;
   };
 
-  RecordCollector.prototype.removeRecord = function (recordToRemove) {
-    const recordsToKeep = this.collection.filter(record =>
-      record!== recordToRemove);
-      this.collection = recordsToKeep;
-    };
+RecordCollector.prototype.removeRecord = function (recordToRemove) {
+  const recordsToKeep = this.collection.filter(record =>
+    record!== recordToRemove);
+    this.collection = recordsToKeep;
+  };
 
-    RecordCollector.prototype.hasRecordBoolean = function(record){
-      return this.collection.includes(record);
-    }
+RecordCollector.prototype.hasRecordBoolean = function(record){
+  return this.collection.includes(record);
+  }
+
+RecordCollector.prototype.sortByArtist = function (){
+  this.collection.sort(compareByArtistName);
+}
+
+compareByArtistName = function(a,b){
+  if(a.title.toLowerCase() < b.title.toLowerCase()){
+    return -1};
+  if(a.title.toLowerCase() > b.title.toLowerCase()){
+    return 1
+  };
+  return 0;
+};
 
 
     module.exports = RecordCollector;

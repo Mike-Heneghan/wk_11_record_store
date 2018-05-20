@@ -40,7 +40,7 @@ describe('Record Store', function(){
   });
 
   xit('should start with an empty collection of records', function(){
-    const actual = recordStore.getCollectionSize():
+    const actual = recordStore.getCollectionSize();
     assert.strictEqual(actual, 0);
   });
 
@@ -60,6 +60,5 @@ describe('Record Store', function(){
 
   xit('should be able to sell a record if it has it in it\'s colleciton')
 
+  xit('should be able to sell a record if it has the record')
 });
-
-// should be able to sell a record if it has the record

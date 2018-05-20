@@ -24,7 +24,7 @@ describe('RecordCollector', function(){
     recordCollector = new RecordCollector();
   });
 
-xit('should start with no funds', function(){
+it('should start with no funds', function(){
   const actual = recordCollector.getFunds();
   assert.strictEqual(actual, 0)
 });
@@ -71,32 +71,7 @@ xit('should be able to remove a record from it\'s collection', function(){
   assert.deepStrictEqual(actual, [record2]);
 });
 
-xit('should be able to buy a record if there is sufficient funds')
+xit('should be able to buy a record if there is sufficient funds');
 
-xit('should be able to sell a record if ti has the record')
+xit('should be able to sell a record if ti has the record');
 });
-
-
-// should be able to sell a record if it has the record
-
-
-
-
-
-
-
-
-
-
-// MVP
-// A record collector:
-//
-// should start with no funds
-// should be able to add funds
-// should be able to remove funds
-// should start with an empty collection of records
-// should be able to add a record to it's collection
-// should be able to find a record by title
-// should be able to remove a record from it's collection
-// should be able to buy a record if it has enough funds
-// should be able to sell a record if it has the record

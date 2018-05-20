@@ -3,6 +3,12 @@ const RecordCollector = function(){
   this.collection = [];
 };
 
+RecordCollector.prototype.getFunds = function () {
+  return this.funds;
+};
+
+
+
 module.exports = RecordCollector;
 
 

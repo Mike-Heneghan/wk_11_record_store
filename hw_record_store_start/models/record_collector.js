@@ -40,18 +40,18 @@ RecordCollector.prototype.hasRecordBoolean = function(record){
   }
 
 RecordCollector.prototype.sortByArtist = function (){
-  this.collection.sort(compareByArtistName);
+  this.collection.sort(function(a,b){
+    let artistA = a.artist.toLowerCase();
+    let artistB = b.artist.toLowerCase();
+    if (artistA < artistB){
+      return -1;
+    }
+    if (artistA > artistB){
+      return 1;
+    }
+    return 0
+  });
 }
-
-compareByArtistName = function(a,b){
-  if(a.title.toLowerCase() < b.title.toLowerCase()){
-    return -1};
-  if(a.title.toLowerCase() > b.title.toLowerCase()){
-    return 1
-  };
-  return 0;
-};
-
 
     module.exports = RecordCollector;
 

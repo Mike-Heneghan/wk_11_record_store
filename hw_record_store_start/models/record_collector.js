@@ -29,7 +29,11 @@ RecordCollector.prototype.findRecordByTitle = function (title) {
   return foundRecord;
 };
 
-
+RecordCollector.prototype.removeRecord = function (recordToRemove) {
+ const recordsToKeep = this.collection.filter(record =>
+ record!== recordToRemove);
+ this.collection = recordsToKeep;
+};
 module.exports = RecordCollector;
 
 

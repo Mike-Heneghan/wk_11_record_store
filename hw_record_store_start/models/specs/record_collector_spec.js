@@ -63,7 +63,7 @@ it('should be able to find a record by title', function(){
   assert.deepStrictEqual(actual2, [record1]);
 });
 
-xit('should be able to remove a record from it\'s collection', function(){
+it('should be able to remove a record from it\'s collection', function(){
   recordCollector.addRecord(record1);
   recordCollector.addRecord(record2);
   recordCollector.removeRecord(record1);

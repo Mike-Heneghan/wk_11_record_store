@@ -8,6 +8,10 @@ RecordStore.prototype.addFunds = function (funds) {
   this.funds += funds;
 };
 
+RecordStore.prototype.removeFunds = function (funds) {
+  this.funds -= funds;
+};
+
 RecordStore.prototype.getStockCount = function () {
   return this.stock.length;
 };

@@ -39,6 +39,13 @@ describe('Record Store', function(){
     assert.strictEqual(actual, 10000);
   });
 
+  it('should be able to reduce funds', function(){
+    recordStore.addFunds(10000);
+    recordStore.removeFunds(5000);
+    const actual = recordStore.funds;
+    assert.strictEqual(actual, 5000);
+  })
+
    it('should start with an empty collection of records', function(){
     const actual = recordStore.getStockCount();
     assert.strictEqual(actual, 0);

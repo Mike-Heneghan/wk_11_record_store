@@ -5,7 +5,9 @@ const assert = require('assert');
 describe('Record Store', function(){
   let record1;
   let record2;
+  let record3;
   let recordStore;
+
 
   beforeEach(function(){
     record1 = new Record({
@@ -19,6 +21,12 @@ describe('Record Store', function(){
       artist: 'Arcade Fire',
       genre: 'indie rock',
       price: 1500
+    });
+    record3 = new Record({
+      title: 'I See You',
+      artist: 'The xx',
+      genre: 'indie rock',
+      price: 1750
     });
     recordStore = new RecordStore('Tower Records');
   });
@@ -77,5 +85,19 @@ describe('Record Store', function(){
     const actual = recordStore.hasRecordBoolean(record1);
     assert.strictEqual(actual, false);
   })
+
+  it('should be able to find all records which match a given genre', function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    recordStore.addRecord(record3);
+    const actual = recordStore.findByProperty({genre: 'indie rock'});
+    assert.deepStrictEqual(actual, [record2, record3]);
+  });
+
+  it('should be able to find all records which match a given title');
+
+  it('should be able to find all records which match a given artist');
+
+  it('should be able to find all records which match on multiple attributes');
 
 });

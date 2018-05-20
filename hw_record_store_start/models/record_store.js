@@ -30,4 +30,13 @@ RecordStore.prototype.removeRecord = function (recordToRemove) {
     return this.stock.includes(record);
   };
 
+  RecordStore.prototype.findByProperty = function (queryObject) {
+    const searchTerms = Object.entries(queryObject);
+    const foundRecords = this.stock.filter(record =>
+    record[`${searchTerms[0][0]}`] === searchTerms[0][1])
+    console.log(searchTerms[0][0]);
+    console.log(searchTerms[0][1]);
+    return foundRecords;
+  };
+
   module.exports = RecordStore;

@@ -23,7 +23,7 @@ describe('Record Store', function(){
     recordStore = new RecordStore('Tower Records');
   });
 
-  xit('should have a name', function(){
+  it('should have a name', function(){
     const actual = recordStore.name;
     assert.strictEqual(actual, 'Tower Records');
   });
